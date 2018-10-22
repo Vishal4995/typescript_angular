@@ -3,23 +3,24 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from '../../shared/guard/auth.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component'
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 const routes: Routes = [
 {
-  path:'',
+  path: '',
   redirectTo: 'login',
   pathMatch: 'full'
 },
 {
  path:'login',
- component: LoginComponent
+ component: LoginComponent,
+ // canActivate: [AuthGuard]
 },
 {
-  path:'forgot-password',
+  path: 'forgot-password',
   component: ForgotPasswordComponent
  },
  {
-  path:'reset-password',
+  path: 'reset-password',
   component: ResetPasswordComponent
  }
 ];
@@ -29,7 +30,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AuthRoutingModule { 
-  constructor(){
-    
-  }
+  constructor() {}
 }

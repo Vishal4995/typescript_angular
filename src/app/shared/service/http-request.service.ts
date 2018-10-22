@@ -20,6 +20,9 @@ export class HttpRequestService {
     } else if (type === 'POST') {
       return this.http.post<any>(this.getApi(requestUrl), data,HTTP_HEADER_OPTION_FN());
     }
+    else if (type === 'DELETE') {
+      return this.http.delete<any>(this.getApi(requestUrl) + data,HTTP_HEADER_OPTION_FN());
+    }
   }
   isLoggednIn() {
     return localStorage.getItem("access_token")

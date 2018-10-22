@@ -46,22 +46,22 @@ const MENUITEMS = [
         short_label: 'D',
         name: 'Manage Users',
         type: 'link',
-        icon: 'feather icon-home'
+        icon: 'feather icon-users'
       },
-      {
-        state: 'navigation',
-        short_label: 'N',
-        name: 'Navigation',
-        type: 'link',
-        icon: 'feather icon-menu'
-      },
-      {
-        state: 'widget',
-        short_label: 'W',
-        name: 'Widget',
-        type: 'link',
-        icon: 'feather icon-layers'
-      }
+      // {
+      //   state: 'navigation',
+      //   short_label: 'N',
+      //   name: 'Navigation',
+      //   type: 'link',
+      //   icon: 'feather icon-menu'
+      // },
+      // {
+      //   state: 'widget',
+      //   short_label: 'W',
+      //   name: 'Widget',
+      //   type: 'link',
+      //   icon: 'feather icon-layers'
+      // }
     ],
   }
 ];

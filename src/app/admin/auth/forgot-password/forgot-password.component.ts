@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import {HttpRequestService  } from '../../../shared/service/http-request.service'
+import {HttpRequestService  } from '../../../shared/service/http-request.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -14,19 +14,18 @@ export class ForgotPasswordComponent implements OnInit {
 	public submitted = false;
 	loading = false;
 
-	constructor(private router: Router, private HttpService: HttpRequestService, public toastr: ToastrService){
+	constructor(private router: Router, private HttpService: HttpRequestService, public toastr: ToastrService) {
 		
 	}
 
-	ngOnInit(){
+	ngOnInit() {
 		document.querySelector('body').setAttribute('themebg-pattern', 'theme1');
 	}
 
-	forgotPassword(){
-		if(!this.forgotPassData.adminEmail){
+	forgotPassword() {
+		if (!this.forgotPassData.adminEmail) {
 			this.submitted = true;
-		}
-		else{
+		} else {
 			var {adminEmail} = this.forgotPassData;
 			this.HttpService.getRequest('POST','FORGOT_PASSWORD', {adminEmail:adminEmail})
 			.subscribe((response:any) => {

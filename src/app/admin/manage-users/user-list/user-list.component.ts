@@ -32,7 +32,7 @@ export class Cmyk {
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  styleUrls: ['./user-list.component.css','../../../../assets/icon/icofont/css/icofont.scss']
 })
 export class UserListComponent implements OnInit {
   p: number = 1;
@@ -46,12 +46,17 @@ export class UserListComponent implements OnInit {
   public searchvalue;
   displayMonths = 3;
   navigation = 'select';
+  public condition;
   showWeekNumbers = false;
   hoveredDate: NgbDateStruct;
   fromDate: string;
   toDate: string;
   disabled = true;
+ public sort_order;
   toggle = false;
+  public sort_by;
+  public profileImage;
+  public searchkey;
   public filterstatus: string;
   public show: any = false;
   public finaldata = [];
@@ -95,13 +100,17 @@ export class UserListComponent implements OnInit {
     this.filterform = new FormGroup({
       searchvalue: new FormControl(""),
     });
-    this.getPage(1, '', '');
+    this.getPage(1, 5,'','','');
     this.getemployeelist(this.p, this.limit, '');
   }
 
   getemployeelist(pageNo, count, search) {
     this.HttpService.getRequest('GET', 'USERLIST', `pageNo=${pageNo}&count=${count}&search=${search}`).subscribe((data: any) => {
       console.log(data);
+      var sno = ((pageNo - 1) * count) + 1;
+      for (var i = 0; i < data.responseData.response.length; i++) {
+        data.responseData.response[i].sno = sno++;
+      }
       this.userlist = data.responseData.response;
       this.totalrecord = data.responseData.total;
       this.list = data.responseData.message
@@ -134,12 +143,34 @@ export class UserListComponent implements OnInit {
     this.filterform.reset();
     this.ngOnInit();
   }
-
-  getPage(pageNo, count, searchKey) {
+	sortingHandler(pageNo, count, searchkey,sort_order,sort_by){
+		let employees = document.getElementById(sort_by);
+	//employees.className = "fa fa-exchange sorting";
+		let company_name = document.getElementById("name");
+		if(company_name.className == "fa fa-exchange sorting"){
+			company_name.className = "fa fa-sort-amount-asc";
+      sort_order = 'asc';
+      this.sort_by = sort_by
+			this.getPage(pageNo, count, searchkey, sort_order,this.sort_by);
+		}
+		else if(company_name.className == "fa fa-sort-amount-asc"){
+			company_name.className = "fa fa-sort-amount-desc";
+      sort_order = 'desc';
+      this.sort_by = sort_by
+			this.getPage(pageNo, count, searchkey,sort_order,this.sort_by);
+    }
+    else{
+			company_name.className = "fa fa-sort-amount-asc";
+      sort_order = 'asc';
+      this.sort_by = sort_by
+			this.getPage(pageNo, count, searchkey, sort_order,this.sort_by);
+		}
+  }
+  getPage(pageNo, count, searchKey,sort_order,sort_by) {
     this.p = pageNo;
     this.loader = true;
 
-    this.HttpService.getRequest('GET', 'USERLIST', `pageNo=${pageNo}&count=${count}&search=${searchKey}`)
+    this.HttpService.getRequest('GET', 'USERLIST', `pageNo=${pageNo}&count=${count}&search=${searchKey}&sort_by=${sort_by}&sort_order=${sort_order}`)
       .subscribe((data: any) => {
         if (data.statusCode == 1) {
           this.loader = false;
@@ -186,7 +217,7 @@ export class UserListComponent implements OnInit {
 		})
 		.then((result) => {
 			if(result.value){
-				this.HttpService.getRequest('DELETE','DELETE_USER',`userid=${userid}`).subscribe((response:any) => {
+				this.HttpService.getRequest('DELETE','DELETE_USER',`?userid=${userid}`).subscribe((response:any) => {
 					if(response.statusCode == 1){
 						Swal({
 							type:'success',

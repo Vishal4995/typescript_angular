@@ -6,7 +6,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import {AdminModule} from '../admin.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {SharedModule} from '../../shared/shared.module'
-import {NgxPaginationModule} from 'ngx-pagination'
+import {NgxPaginationModule} from 'ngx-pagination';
+import { UserDetailsComponent } from './user-details/user-details.component'
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import {NgxPaginationModule} from 'ngx-pagination'
     ReactiveFormsModule
    
   ],
-  declarations: [ManageUsersComponent, UserListComponent]
+  declarations: [ManageUsersComponent, UserListComponent, UserDetailsComponent]
 })
 export class ManageUsersModule {
   constructor(){

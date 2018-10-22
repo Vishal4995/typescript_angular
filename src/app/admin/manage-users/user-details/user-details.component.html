@@ -1,0 +1,97 @@
+<div class="page-body">
+  <!--profile cover start-->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="cover-profile">
+        <div class="profile-bg-img">
+          <img class="profile-bg-img img-fluid" src="assets/images/user-profile/bg-img1.jpg" alt="bg-img">
+          <div class="card-block user-info">
+            <div class="col-md-12">
+              <div class="media-left">
+                <a href="javascript:" class="profile-image">
+                  <img class="user-img img-radius" src="{{inputval.profileImage?inputval.profileImage : '../../../../../../assets/images/1024px-No_image_available.svg.png'}}" alt="user-img"  height="100px" width="100px">
+                </a>
+              </div>
+              <div class="media-body row">
+                <div class="col-lg-12">
+                  <div class="user-title">
+                    <h2>{{inputval.name}}</h2>
+                    <span class="text-white">{{inputval.email}}</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="pull-right cover-btn">
+                    <button type="button" class="btn btn-primary m-r-10 m-b-5 ripple light"><i class="icofont icofont-plus"></i> Follow</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-header-text">About Me</h5>
+      <!-- <button id="edit-btn" type="button" class="btn btn-sm btn-primary pull-right ripple light" (click)="toggleEditProfile()">
+        <i class="icofont {{ editProfileIcon }}"></i>
+      </button> -->
+    </div>
+  <div class="card-body">
+    <div class="view-info">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="general-info">
+            <div class="row">
+              <div class="col-lg-12 col-xl-6">
+                <div class="table-responsive">
+                  <table class="table m-0">
+                    <tbody>
+                    <tr>
+                      <th scope="row">Full Name</th>
+                      <td>{{inputval.name}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Gender</th>
+                      <td>{{inputval.gender==1? "Male":inputval.gender==2?"Female":"Not available"}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Birth Date</th>
+                      <td>{{inputval.dob?inputval.dob:"Not available"}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Email</th>
+                      <td>{{inputval.email}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- end of table col-lg-6 -->
+              <div class="col-lg-12 col-xl-6">
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody>
+                    <tr>
+                      <th scope="row">Phone Number</th>
+                      <td>{{inputval.phone}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Address</th>
+                      <td>{{inputval.address?inputval.address: "Not available"}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- end of table col-lg-6 -->
+            </div>
+            <!-- end of row -->
+          </div>
+          <!-- end of general info -->
+        </div>
+        <!-- end of col-lg-12 -->
+      </div>
+      <!-- end of row -->
+    </div>    </div>  </div>

@@ -5,12 +5,12 @@
         <div class="col-sm-12">
           <p class="cname">{{list}}</p>
           <!-- <button class="btn btn-grd-primary ripple light">Send Notification</button> -->
-          <span class="filter" (click)="toggle()">Filter <i class="fa fa-filter filterico"></i></span>
+          <!-- <span class="filter" (click)="toggle()">Filter <i class="fa fa-filter filterico"></i></span> -->
           <label class="dt-cust-search float-right">
             <div class="form-group">
               <label>Search: </label>
               <input type="text" class="form-control input-sm m-l-10 ser" name="searchkey" [(ngModel)]="searchkey"
-                #searchkeyChk="ngModel" (input)="getPage(1,5,searchkey)" placeholder="Search by company name, contact person, email..."
+                #searchkeyChk="ngModel" (input)="getPage(1,5,searchkey,sort_order,sort_by)" placeholder="Search by company name, contact person, email..."
                 autofocus autocomplete="off" />
             </div>
           </label>
@@ -20,14 +20,13 @@
         <table class="table table-sm table-bordered">
           <thead>
             <tr>
-              <!-- <input id="checkbox13" type="checkbox"[(ngModel)]="selectedAll" (change)="selectAll($event)"> -->
               <th>Sr No.</th>
               <th>Profile</th>
-              <th>Name</th>
+              <th  class="cursor" (click)="sortingHandler(1,5,'',sort_order,'name')">Name <i class="fa fa-exchange sorting" aria-hidden="true" id="name"></i></th>
               <th>Gender</th>
               <th>Email</th>
               <th>Address</th>
-              <th>Registered Date</th>
+              <th class="cursor" (click)="sortingHandler(1,5,'',sort_order,'created')">Registered Date <i class="fa fa-exchange sorting" aria-hidden="true" id="created"></i></th>
               <th>Action</th>
             </tr>
           </thead>
@@ -37,10 +36,10 @@
             </tr>
             <tr *ngFor=" let res of userlist | paginate: { itemsPerPage: limit, currentPage: p,totalItems: totalrecord };let i = index">
               <!-- <input  type="checkbox" [(ngModel)]="selected[res._id]" value="{{res._id}}" (change)="checkIfAllSelected($event);"> -->
-              <th scope="row">{{i+1}}</th>
+              <th scope="row">{{res.sno}}</th>
               <td><img src="{{res.profileImage?res.profileImage: './../../../../../assets/images/1024px-No_image_available.svg.png'}}"
                   height="60px" width="60px"></td>
-              <td> {{res.name}}</td>
+              <td><a [routerLink]="['userDetails',res._id]"> {{res.name}}</a></td>
               <td> {{res.gender==1? "Male":"Female"}}</td>
               <td>{{res.email}}</td>
               <td>{{res.address?res.address:"Not available"}}</td>
@@ -50,8 +49,8 @@
                 </button></td>
             </tr>
           </tbody>
-        </table>
-        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+        </table><br>
+        <pagination-controls (pageChange)="pageChanged($event)" style="float:right"></pagination-controls>
       </div>
     </app-card>
 
