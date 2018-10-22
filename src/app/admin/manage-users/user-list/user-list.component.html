@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-card [title]="" [classHeader]="true" [blockClass]="'table-border-style'" [cardOptionBlock]="true">
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="cname">{{list}}</p>
+          <!-- <button class="btn btn-grd-primary ripple light">Send Notification</button> -->
+          <span class="filter" (click)="toggle()">Filter <i class="fa fa-filter filterico"></i></span>
+          <label class="dt-cust-search float-right">
+            <div class="form-group">
+              <label>Search: </label>
+              <input type="text" class="form-control input-sm m-l-10 ser" name="searchkey" [(ngModel)]="searchkey"
+                #searchkeyChk="ngModel" (input)="getPage(1,5,searchkey)" placeholder="Search by company name, contact person, email..."
+                autofocus autocomplete="off" />
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="table-responsive record-table">
+        <table class="table table-sm table-bordered">
+          <thead>
+            <tr>
+              <!-- <input id="checkbox13" type="checkbox"[(ngModel)]="selectedAll" (change)="selectAll($event)"> -->
+              <th>Sr No.</th>
+              <th>Profile</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Registered Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf='userlist?.length === 0'>
+              <td class="text-center" colspan="7">No record found</td>
+            </tr>
+            <tr *ngFor=" let res of userlist | paginate: { itemsPerPage: limit, currentPage: p,totalItems: totalrecord };let i = index">
+              <!-- <input  type="checkbox" [(ngModel)]="selected[res._id]" value="{{res._id}}" (change)="checkIfAllSelected($event);"> -->
+              <th scope="row">{{i+1}}</th>
+              <td><img src="{{res.profileImage?res.profileImage: './../../../../../assets/images/1024px-No_image_available.svg.png'}}"
+                  height="60px" width="60px"></td>
+              <td> {{res.name}}</td>
+              <td> {{res.gender==1? "Male":"Female"}}</td>
+              <td>{{res.email}}</td>
+              <td>{{res.address?res.address:"Not available"}}</td>
+              <td> {{res.created | date}}</td>
+              <td><button  class="btn btn-sm btn-danger "  type="button" (click)="delete(res._id)">
+                <i class="fa fa-trash"></i>
+                </button></td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+      </div>
+    </app-card>
+
+  </div>
+</div>

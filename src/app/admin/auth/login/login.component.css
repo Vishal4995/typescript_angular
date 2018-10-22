@@ -1,0 +1,40 @@
+
+.logo{
+    width: 32%;
+    text-align: center;
+    margin-left: 131px;
+}
+
+a{
+    color: #007bff !important;
+}
+ 
+
+.overlay:after{
+  content: '';
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 750px;
+}
+.login-block{margin-top:0px;}
+.md-float-material{padding-top:40px;}
+.login-block .auth-box {
+    margin-top: 35px!important;
+    max-width: 450px;
+}
+
+.card .card-block p {
+  font-weight: 600;
+}
+
+.overlay:before {
+    display: none !important;
+}
+
+
+.form-material .float-label {
+    position: relative;
+}
+

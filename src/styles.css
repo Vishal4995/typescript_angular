@@ -1,0 +1,127 @@
+@import url('https://use.fontawesome.com/releases/v5.0.9/css/all.css');
+
+  .pcoded .pcoded-header[header-theme="theme1"],.pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item > li.active:hover > a, .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item > li.active > a, .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item > li.pcoded-trigger:hover > a, .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item > li.pcoded-trigger > a, .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item > li:hover:hover > a, .pcoded[theme-layout="vertical"] .pcoded-navbar[active-item-theme="theme1"] .pcoded-item > li:hover > a,.btn-grd-primary{    background: #40a6e3    !important; }  
+  .login-block {
+     margin: 0px!important; 
+}
+ .form-material{padding-top:20px!important;} 
+.login-block:before{content:'';position:absolute;height:100%;width:100%;}
+.login-block{height:100%;}
+.eekhoe-login{    
+    text-align: center !important;
+    position: absolute;
+    top: 14px;
+    z-index: 99;
+    left: 0;
+    right: 0;}
+    #logincard{z-index:9;margin:0 auto!important;display: block;}
+    .eekhoe-login .logo {
+        width: 100px!important;
+    }
+
+ .login-content{height:100%;display:table;width:100%;}
+ .inside-login{height:100%;vertical-align: middle;display: table-cell;}
+ .login-form{margin:0 auto;display:block;}
+ .eekhoe-login-logo{position:relative;z-index: 99;padding-bottom: 26px;}
+ .eekhoe-login-logo img{margin:0 auto;display:block;width:100px!important;}
+  .login-block .form-material .float-label {pointer-events: none;position: absolute;}
+.category-modal .btn {
+    padding: 8px 45px!important;
+}
+.searchbox input:focus{
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: none;}
+.searchbox input{padding: 8px 5px!important;}
+.sidebar{height:100vh!important;}
+.header-navbar{padding:5px!important; }
+.sidebar{padding-top: 40px!important;}
+.sidebar .main-menu-header{padding:0px!important;}
+#more-details {cursor: pointer;font-size: 18px;padding-top: 10px;border-top: 1px solid #00a6e2;color: #666;}
+.filter-btn .btn{position:static!important;}
+.filter-btn{    position: absolute;right: 0;}
+.filter{cursor:pointer;padding: 8px 45px!important;background:#00a6e2;float:right;color:#fff; margin-top: 3px;}
+.filterico{color:#fff;font-size:10px;}
+.form-control-default {
+    color: #000!important   ;
+}
+.btn i {
+    font-size: 15px!important;
+    margin-right: 0!important;
+}
+.switch-small {
+    width: 41px!important;
+    height: 19px!important;}
+    .switch-small.checked small {
+        left: 23px!important;
+    }
+    .switch-small small {
+        width: 17px!important;
+        height: 18px!important;
+    }
+ /*--------LogIn Css-------*/
+.cover {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card-block  a{color: #448aff;}
+  .data-table{overflow: hidden!important;}
+  .category-modal{
+    position: absolute!important;
+    top: 50%!important;
+    left: 50%!important;
+    width: 500px!important;
+    height: 500px!important;
+    margin-top: -123px!important;
+    margin-left: -250px!important;
+  }
+
+
+.cursor { cursor: pointer; }.sorting {	transform: rotate(90deg);	opacity: 0.4;}
+
+.preloader3
+{
+position: absolute;
+top:0;
+bottom: 0;
+left: 0;
+right: 0;
+
+margin: auto;
+}
+
+.loader-color{
+    background-color:#41a6e3
+}
+
+.pcoded .pcoded-navbar[pcoded-navbar-position="fixed"] {
+    position: fixed !important;
+}
+
+.modal-header {
+    display: block !important;
+}
+.basic .basic-close {
+    top: 0;
+    right: 5px;;
+}
+
+.modal-content {
+    max-height: calc(100vh - 50px) !important;
+    overflow-y: auto !important;
+  } 
+
+  .category-modal {
+    margin-top: 0 !important;
+    height: auto !important;
+    max-height: 500px !important;
+    margin-left: 0 !important;
+    transform: translate(-50%, -50%) !important;
+  }

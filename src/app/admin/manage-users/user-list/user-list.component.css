@@ -1,0 +1,91 @@
+form > .row {
+    width: 100%;
+}
+
+.cm_form_inline {
+	position: relative;
+	padding-right: 160px;
+}
+
+.cm_form_inline .btn {
+    position: absolute;
+    top: 18px;
+    right: 0;
+}
+
+.cm_Reset {
+    right: 80px !important;
+}
+
+.cm_add_new_employee {
+    margin-bottom: 20px;
+}
+.dt-cust-search.float-right .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 10px!important;
+    margin-top: -7px!important;
+}
+.filtericon{
+
+    float: right;
+    font-size: 44px;
+    color: #afcb08;
+	cursor:pointer;
+
+}
+.filter{
+    margin-top: -7px!important;
+}
+.record-table  .table.table-sm td, .table.table-sm th {
+    padding: 15px 14px !important;
+}
+
+.exelbtn{
+
+    float: right;
+    position: absolute;
+    /* top: 0; */
+    right: 21px;
+    top: 20px;
+}
+
+.exelbtn1{
+    float: right;
+    position: absolute;
+    right: 195px;
+    top: 20px;
+    background-color: #afcb08 !important;
+
+}
+
+.exelbtn2{
+    float: right;
+    position: absolute;
+    right: 362px;
+    top: 20px;
+    background-color: #afcb08 !important;
+}
+
+.cname{
+    font-weight: 800;
+    font-size: 19px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 15px;
+}
+
+.checkbox-color {
+    display: inline-block;
+    margin-right: -7px !important;
+    cursor: pointer;
+}
+.online{
+    width: 24px;
+    padding: 5px;
+}
+
+.cm-no-image {
+    text-indent: 24px;
+} 
